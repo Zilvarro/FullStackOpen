@@ -1,0 +1,10 @@
+note over browser:
+browser executes the js-code attached 
+to the submit event of the form which adds 
+the new note locally and sends a server request
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+server adds new note to array
+end note
+
