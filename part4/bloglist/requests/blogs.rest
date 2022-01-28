@@ -1,0 +1,33 @@
+GET http://localhost:3001/api/blogs
+###
+
+GET http://localhost:3001/api/blogs/61f3f2beb4c1c20b00bd3d4c
+###
+
+DELETE http://localhost:3001/api/blogs/61f3f2beb4c1c20b00bd3d4c
+###
+
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+  "title": "mytitle",
+  "author": "myauthor",
+  "url": "myurl",
+  "likes": 0
+}
+###
+
+PUT http://localhost:3001/api/blogs/61a123b876f351de071ed84f
+Content-Type: application/json
+
+{
+    "number": "8888-8885"
+}
+###
+
+GET http://localhost:3001/xyz
+###
+
+GET http://localhost:3001/api/blogs/xyz
+###
