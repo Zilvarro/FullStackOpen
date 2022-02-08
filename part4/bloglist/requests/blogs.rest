@@ -18,11 +18,11 @@ Content-Type: application/json
 }
 ###
 
-PUT http://localhost:3001/api/blogs/61a123b876f351de071ed84f
+PUT http://localhost:3001/api/blogs/61f3f559eb3221e53008e817
 Content-Type: application/json
 
 {
-    "number": "8888-8885"
+    "likes": 11
 }
 ###
 
