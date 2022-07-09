@@ -1,0 +1,26 @@
+GET http://localhost:3001/api/users
+###
+
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "mr1",
+  "name": "meinname",
+  "password": "abc"
+}
+###
+
+PUT http://localhost:3001/api/blogs/61f3f559eb3221e53008e817
+Content-Type: application/json
+
+{
+    "likes": 11
+}
+###
+
+GET http://localhost:3001/xyz
+###
+
+GET http://localhost:3001/api/blogs/xyz
+###

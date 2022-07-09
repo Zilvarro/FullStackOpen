@@ -9,13 +9,14 @@ DELETE http://localhost:3001/api/blogs/61f3f2beb4c1c20b00bd3d4c
 
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1yMSIsImlkIjoiNjJjOTY2NmY4YjA1YWZjZTExMDdkYmE4IiwiaWF0IjoxNjU3Mzg0MjgyfQ.m6bQe2-54zZfHnyeDdL_BnfHH3B1usbSvatJmVNEc84
 
 {
-  "title": "mytitle2",
+  "title": "mytitle5",
   "author": "myauthor2",
   "url": "myurl2",
   "likes": 5
-}
+ }
 ###
 
 PUT http://localhost:3001/api/blogs/61f3f559eb3221e53008e817

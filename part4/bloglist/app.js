@@ -4,6 +4,8 @@ require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const blogsRouter = require('./controllers/blogs')
+const usersRouter = require('./controllers/users')
+const loginRouter = require('./controllers/login')
 const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 
@@ -18,6 +20,8 @@ mongoose.connect(config.MONGODB_URI).then(()=>{
 })
 
 app.use('/api/blogs', blogsRouter)
+app.use('/api/users', usersRouter)
+app.use('/api/login', loginRouter)
 
 const unknownEndpoint = (request, response) => {
     response.status(404).send({ error: 'unknown endpoint' })
@@ -29,6 +33,14 @@ const errorHandler = (error, request, response, next) => {
         return response.status(400).send({ error: 'malformed id' })
     } else if (error.name ==='ValidationError') {
         return response.status(400).json(error.message)
+    } else if (error.name === 'JsonWebTokenError') {
+        return response.status(401).json({
+            error: 'invalid token'
+        })
+    } else if (error.name === 'TokenExpiredError') {
+        return response.status(401).json({
+            error: 'token expired'    
+        })
     }
     next(error)
 }
